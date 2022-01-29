@@ -6,11 +6,13 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 17:20:26 by nargouse          #+#    #+#             */
-/*   Updated: 2022/01/29 20:34:28 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/01/29 21:42:28 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "server.h"
+
+int	*g_buffer;
 
 int	main(void)
 {
