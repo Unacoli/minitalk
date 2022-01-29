@@ -6,28 +6,35 @@
 #    By: nargouse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/07 14:54:05 by nargouse          #+#    #+#              #
-#    Updated: 2022/01/28 14:36:36 by nargouse         ###   ########.fr        #
+#    Updated: 2022/01/29 17:24:33 by nargouse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= push_swap
-INCLUDE = ./include
+NAME	= server
+NAME_C	= client
+INCLUDE = ./include/
 LIBFT	= ./libft/libft.a
 LIB	= $(LIBFT)
 CFLAGS	+= -Wall -Werror -Wextra -DLINUX
 
-SRCS	= $(addprefix ./srcs/, main.c free.c pa.c pb.c ra.c rb.c rra.c rrb.c\
-	  	rr.c rrr.c sa.c sb.c ss.c error.c stack.c sort.c sort_3.c\
-		sort_under_5.c sort_over_5.c index.c)
+FILES	= main_server.c
+SRCS	= $(addprefix ./srcs/, $(FILES))
+OBJS	= $(addprefix ./objs/, $(FILES:.c=.o))  
 
-OBJS	= $(SRCS:.c=.o)
+FILES_C	= main_client.c
+SRCS_C	= $(addprefix ./srcs/, $(FILES_C))
+OBJS_C	= $(addprefix ./objs/, $(FILES_C:.c=.o))  
 
-all: $(NAME)
+all: $(NAME) $(NAME_C)
 
 $(NAME): $(LIBFT) $(OBJS)
 	$(CC) $(OBJS) $(LIB) $(CFLAGS) -o $@
 
-srcs/%.o: srcs/%.c
+$(NAME_C): $(LIBFT) $(OBJS_C)
+	$(CC) $(OBJS_C) $(LIB) $(CFLAGS) -o $@
+
+objs/%.o: srcs/%.c
+	mkdir -p ./objs/
 	$(CC) -I $(INCLUDE) $(CFLAGS) -c $< -o $@
 
 $(LIBFT):
@@ -35,10 +42,10 @@ $(LIBFT):
 
 clean:
 	$(MAKE) -C ./libft clean
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(OBJS_C)
 
 fclean:	clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(NAME_C)
 	$(RM) $(LIBFT)
 
 norm:

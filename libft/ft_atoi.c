@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 13:17:41 by nargouse          #+#    #+#             */
-/*   Updated: 2022/01/28 17:29:32 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/01/29 17:11:40 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ long	ft_atoi(const char *str)
 		i++;
 	}
 	if (n > LONG_MAX)
-		return (ft_if(s);
+		return (ft_if(s));
 	return (n * s);
 }
