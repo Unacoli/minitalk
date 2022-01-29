@@ -6,7 +6,7 @@
 #    By: nargouse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/07 14:54:05 by nargouse          #+#    #+#              #
-#    Updated: 2021/11/17 17:21:51 by nargouse         ###   ########.fr        #
+#    Updated: 2022/01/29 18:50:36 by nargouse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRC		= ft_atoi.c ft_lstsize.c ft_strlcat.c ft_bzero.c ft_memccpy.c\
 		ft_putstr_fd.c ft_toupper.c ft_lstclear.c ft_split.c\
 		get_next_line.c ft_lstdelone.c ft_strchr.c ft_lstiter.c\
 		ft_strdup.c ft_lstlast.c ft_strichr.c ft_lstmap.c ft_strjoin.c\
-		ft_lstnew.c ft_strjoin_free.c
+		ft_lstnew.c ft_strjoin_free.c ft_int_error.c
 
 OBJ		= $(SRC:.c=.o)
 RM		= rm -f
