@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 17:20:05 by nargouse          #+#    #+#             */
-/*   Updated: 2022/01/29 20:11:35 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/01/29 21:04:59 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int get_max_bits(char *av)
     return (max_bits);
 }
 
-void    send_signal(char **av)
+void    send_signals(char **av)
 {
     int i;
     int j;
@@ -58,7 +58,7 @@ int	main(int ac, char **av)
 	{
         if (ft_int_error(2, av) == EXIT_FAILURE || ft_atoi(av[1]) < 2)
            ft_quit("Wrong PID or cannot be 1.\n");
-        send_signal(av);
+        send_signals(av);
 		return (EXIT_SUCCESS);
 	}
 	else
