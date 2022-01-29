@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.h                                           :+:      :+:    :+:   */
+/*   ft_flag_pourcent.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nargouse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/29 17:22:49 by nargouse          #+#    #+#             */
-/*   Updated: 2022/01/29 20:35:40 by nargouse         ###   ########.fr       */
+/*   Created: 2021/08/17 15:49:43 by nargouse          #+#    #+#             */
+/*   Updated: 2021/08/26 16:40:26 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERVER_H
-# define SERVER_H
+#include "../include/ft_printf.h"
 
-#include "../libft/include/libft.h"
-#include "../libft/include/ft_printf.h"
-#include <unistd.h>
-
-#endif
+int	ft_flag_pourcent(int *p_char)
+{
+	if (write(1, "%", 1) == -1)
+		return (-1);
+	(*p_char)++;
+	return (0);
+}
