@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 17:20:05 by nargouse          #+#    #+#             */
-/*   Updated: 2022/02/01 19:46:25 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/02/01 20:22:14 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,12 @@ void    send_signals(char **av)
 {
     int i;
     int j;
-    int max_bits;
 
     i = 0;
-    max_bits = 8;
     while (i < ft_strlen(av[2]))
     {
-        j = 0;
-        while (j < max_bits)
+        j = 7;
+        while (j >= 0)
         {
             if (((av[2][i] >> j) & 1) == 1)
 			{
@@ -47,7 +45,8 @@ void    send_signals(char **av)
 				ft_printf("0");
                 kill(ft_atoi(av[1]), SIGUSR2);
 			}
-			j++;
+			sleep(1);
+			j--;
         }
 		ft_printf(" ");
         i++;
