@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 17:20:26 by nargouse          #+#    #+#             */
-/*   Updated: 2022/02/01 21:02:10 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/02/01 21:08:35 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 int	g_buffer[9];
 
-void	ft_b42()
+static void	ft_reset_buffer()
 {
 	int	i;
 	
 	i = 1;
+	g_buffer[0] = 1;
 	while (i < 9)
 		g_buffer[i++] = 42;
 }
@@ -59,7 +60,7 @@ int	main(void)
 		{
 			ft_decode_signals();
 			i = 0;
-			g_buffer[0] = 1;
+			ft_reset_buffer();
 		}
 		pause();
 		i++;
