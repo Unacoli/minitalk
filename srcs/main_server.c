@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 17:20:26 by nargouse          #+#    #+#             */
-/*   Updated: 2022/02/01 21:08:35 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/02/01 21:19:42 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,10 @@ static void	ft_reset_buffer()
 
 static void	ft_decode_signals()
 {
-	int	i;
-
-	i = 1;
-	while (i < 9)
-	{
-		ft_printf("%d\n", g_buffer[i]);
-		i++;
-	}
+	char c;
+	
+	c = (char)ft_bin_to_dec(&g_buffer[1]);
+	ft_putchar_fd(c, 1);	
 }
 
 static void	signal_handler(int sig)
