@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 17:20:05 by nargouse          #+#    #+#             */
-/*   Updated: 2022/02/01 20:22:14 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/02/01 20:58:09 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void    send_signals(char **av)
 				ft_printf("0");
                 kill(ft_atoi(av[1]), SIGUSR2);
 			}
-			sleep(1);
+			usleep(800);
 			j--;
         }
 		ft_printf(" ");
