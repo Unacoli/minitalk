@@ -6,17 +6,11 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 17:20:05 by nargouse          #+#    #+#             */
-/*   Updated: 2022/01/29 21:04:59 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/02/01 19:46:25 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "client.h"
-
-void    ft_quit(char *message)
-{
-    ft_putstr_fd(message, STDERR_FILENO);
-    exit(EXIT_FAILURE);
-}
 
 int get_max_bits(char *av)
 {
@@ -37,19 +31,28 @@ void    send_signals(char **av)
     int max_bits;
 
     i = 0;
-    max_bits = get_max_bits(av[2]);
-    while (i < max_bits)
+    max_bits = 8;
+    while (i < ft_strlen(av[2]))
     {
         j = 0;
-        while (j++ < ft_strlen(av[2]) - 1)
+        while (j < max_bits)
         {
-            if (((*av[2] >> i) & 1) == 1)
+            if (((av[2][i] >> j) & 1) == 1)
+			{
+				ft_printf("1");	
                 kill(ft_atoi(av[1]), SIGUSR1);
+			}
             else
+			{
+				ft_printf("0");
                 kill(ft_atoi(av[1]), SIGUSR2);
+			}
+			j++;
         }
+		ft_printf(" ");
         i++;
     }
+	ft_printf("\n");
 }
 
 int	main(int ac, char **av)

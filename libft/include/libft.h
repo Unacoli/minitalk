@@ -6,7 +6,7 @@
 /*   By: nargouse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 17:38:36 by nargouse          #+#    #+#             */
-/*   Updated: 2022/01/29 18:50:29 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/02/01 15:15:03 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int		ft_check_base(const char *base);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_atoi_base(const char *str, char *base);
 int		ft_lstsize(t_list *lst);
+int		ft_pow(int x, int y);
 
 char	*ft_strdup(const char *src);
 char	*ft_itoa(int n);
@@ -56,6 +57,7 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_convert_base(const char *nbr, char *b_from, char *b_to);
+char	*ft_realloc(char *s, int size);
 
 void	ft_putnbr(int n);
 void	ft_putnbr_base(int nbr, char *base);

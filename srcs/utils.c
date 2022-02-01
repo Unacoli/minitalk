@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.h                                           :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/29 17:22:49 by nargouse          #+#    #+#             */
-/*   Updated: 2022/02/01 16:01:26 by nargouse         ###   ########.fr       */
+/*   Created: 2022/02/01 14:38:53 by nargouse          #+#    #+#             */
+/*   Updated: 2022/02/01 17:01:15 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERVER_H
-# define SERVER_H
-# define BUFF_SIZE 1024
+#include "server.h"
+#include "client.h"
 
-#include "../libft/include/libft.h"
-#include "../libft/include/ft_printf.h"
-#include <unistd.h>
-#include <signal.h>
+void    ft_quit(char *message)
+{
+    ft_putstr_fd(message, STDERR_FILENO);
+    exit(EXIT_FAILURE);
+}
 
-extern int *g_buffer;
+int	ft_bin_to_dec(int *n)
+{
+	int decimal;
+	int i;
 
-void	ft_quit(char *message);
-
-int	*ft_dec_to_bin(int n);
-int	ft_bin_to_dec(int *n);
-
-#endif
+	decimal = 0;
+	i = 0;
+	while (i < 8)
+	{
+		decimal += n[i] * ft_pow(2, i);
+		i++;
+	}
+	return (decimal);
+}

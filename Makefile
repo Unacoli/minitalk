@@ -6,7 +6,7 @@
 #    By: nargouse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/07 14:54:05 by nargouse          #+#    #+#              #
-#    Updated: 2022/01/29 17:24:33 by nargouse         ###   ########.fr        #
+#    Updated: 2022/02/01 14:35:58 by nargouse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,11 +17,11 @@ LIBFT	= ./libft/libft.a
 LIB	= $(LIBFT)
 CFLAGS	+= -Wall -Werror -Wextra -DLINUX
 
-FILES	= main_server.c
+FILES	= main_server.c utils.c
 SRCS	= $(addprefix ./srcs/, $(FILES))
 OBJS	= $(addprefix ./objs/, $(FILES:.c=.o))  
 
-FILES_C	= main_client.c
+FILES_C	= main_client.c utils.c
 SRCS_C	= $(addprefix ./srcs/, $(FILES_C))
 OBJS_C	= $(addprefix ./objs/, $(FILES_C:.c=.o))  
 
