@@ -6,13 +6,19 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 17:20:05 by nargouse          #+#    #+#             */
-/*   Updated: 2022/02/04 00:32:34 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/02/04 00:53:03 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "client.h"
 
-void    send_signals(char **av)
+static void	kill_wrap(pid_t pid, int sig)
+{
+	if (kill(pid, sig) == -1)
+		ft_quit("Failed to send signal, maybe wrong PID.\n");
+}
+
+static void	send_signals(char **av)
 {
     int i;
     int j;
@@ -24,9 +30,9 @@ void    send_signals(char **av)
         while (j < 8)
         {
             if (((av[2][i] >> j) & 1) == 1)
-                kill(ft_atoi(av[1]), SIGUSR1);
+                kill_wrap(ft_atoi(av[1]), SIGUSR1);
             else
-                kill(ft_atoi(av[1]), SIGUSR2);
+                kill_wrap(ft_atoi(av[1]), SIGUSR2);
 			usleep(SLEEP_TIME);
 			j++;
         }
