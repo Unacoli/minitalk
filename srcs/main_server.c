@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/29 17:20:26 by nargouse          #+#    #+#             */
-/*   Updated: 2022/02/01 21:19:42 by nargouse         ###   ########.fr       */
+/*   Created: 2022/02/04 00:58:33 by nargouse          #+#    #+#             */
+/*   Updated: 2022/02/04 01:00:08 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 int	g_buffer[9];
 
-static void	ft_reset_buffer()
+static void	ft_reset_buffer(void)
 {
 	int	i;
-	
+
 	i = 1;
 	g_buffer[0] = 1;
 	while (i < 9)
 		g_buffer[i++] = 42;
 }
 
-static void	ft_decode_signals()
+static void	ft_decode_signals(void)
 {
-	char c;
-	
+	char	c;
+
 	c = (char)ft_bin_to_dec(&g_buffer[1]);
-	ft_putchar_fd(c, 1);	
+	ft_putchar_fd(c, 1);
 }
 
 static void	signal_handler(int sig)
@@ -45,7 +45,7 @@ int	main(void)
 {
 	int		i;
 
-    ft_printf("%d\n", getpid());
+	ft_printf("%d\n", getpid());
 	i = 0;
 	g_buffer[0] = 1;
 	signal(SIGUSR1, &signal_handler);

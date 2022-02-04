@@ -6,7 +6,7 @@
 /*   By: nargouse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 17:38:36 by nargouse          #+#    #+#             */
-/*   Updated: 2022/02/01 15:15:03 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/02/04 01:05:48 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	ft_lstadd_back(t_list **alst, t_list *new_list);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
-int     ft_int_error(int ac, char **av);
+int		ft_int_error(int ac, char **av);
 
 size_t	ft_strlcat(char *dst, char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);

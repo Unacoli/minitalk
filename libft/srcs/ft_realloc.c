@@ -6,15 +6,15 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 15:15:11 by nargouse          #+#    #+#             */
-/*   Updated: 2022/02/01 15:52:24 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/02/04 01:03:52 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			*ft_realloc(char *s, int size)
+char	*ft_realloc(char *s, int size)
 {
-	char		*tmp;
+	char	*tmp;
 
 	tmp = (char *)malloc(sizeof(char) * (ft_strlen(s) + size));
 	if (tmp == NULL)

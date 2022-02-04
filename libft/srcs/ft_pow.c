@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 15:10:42 by nargouse          #+#    #+#             */
-/*   Updated: 2022/02/01 15:51:01 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/02/04 01:04:13 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_pow(int x, int y)
 {
-	int power;
+	int	power;
 
 	power = 1;
 	while (y > 0)
